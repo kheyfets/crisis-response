@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HQ Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body id="top" class="hq">
+    <img class="bg" src="img/bg4.jpg">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="#">HQ Crisis Dashboard</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container marketing">
+      <div class="row jumbotron about-us block" style="border-radius: 0">
+        
+        <!--
+        <table>
+          <% for (var i = 0; i < data.length; i++) { %>
+              <tr>
+                  <td>
+                      <%= data[i][priority] %>
+                  </td>
+                  <td>
+                      <%= data[i][issueType] %>
+                  </td>
+                  <td>
+                      <%= data[i][flightNumber] %>
+                  </td>
+                  <td>
+                      <%= data[i][seatNumber] %>
+                  </td>
+                  <td>
+                      <%= data[i][passengerName] %>
+                  </td>
+                  <td>
+                      <%= data[i][comments] %>
+                  </td>
+                  <td>
+                      <%= data[i][crewID] %>
+                  </td>
+              </tr>
+          <% } %>
+        </table>
+        -->
+
+        <table>
+          <% for (var i = 0; i < data.length; i++) { %>
+              <tr>
+                  <td>
+                      <%= data[i][priority] %>
+                  </td>
+                  <td>
+                      <%= data[i][issueType] %>
+                  </td>
+                  <td>
+                      <%= data[i][flightNumber] %>
+                  </td>
+                  <td>
+                      <%= data[i][seatNumber] %>
+                  </td>
+                  <td>
+                      <%= data[i][passengerName] %>
+                  </td>
+                  <td>
+                      <%= data[i][comments] %>
+                  </td>
+                  <td>
+                      <%= data[i][crewID] %>
+                  </td>
+              </tr>
+          <% } %>
+        </table>
+
+      </div>
+    </div>
+
+    <!-- js at the end of file for faster load -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
