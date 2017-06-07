@@ -48,8 +48,9 @@ app.post('/api/alert/new', function(req, res) {
     issueType: req.body.issueType,
     flightNumber: req.body.flightNumber,
     seatNumber: req.body.seatNumber,
-    comments: req.body.comments,
+    passengerName: req.body.passengerName,
     crewId: req.body.crewId,
+    comments: req.body.comments,
   });
 
   alert.save(function(err, alert) {

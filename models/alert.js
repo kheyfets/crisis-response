@@ -7,6 +7,7 @@ const AlertSchema = new mongoose.Schema({
 	seatNumber: String,
 	comments: String,
 	crewId: Number,
+	passengerName: String,
 	time: {
 		type: Date,
 		default: Date.now
