@@ -4007,11 +4007,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #999999;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: rgb(200,200,200);
+  color: white;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: grey;
+  color: white;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
