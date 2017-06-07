@@ -5,6 +5,7 @@ body {
   color: #5a5a5a;
   background-color: rgba(0,0,0,.9);
   margin: 0;
+  font-family: sans-serif;
 }
 
 .pull-center {
@@ -25,6 +26,8 @@ body {
   min-height: 100%;
 
   opacity: .6;
+
+  filter: saturate(800%);
 }
 
 .access-header {
@@ -38,7 +41,6 @@ body {
 }
 
 .about-us {
-  text-align: center;
   padding: 20px;
   display: block;
   position: relative;
@@ -52,42 +54,27 @@ body {
 
 .navbar {
   color: white;
+  font-size: 21px;
+  background-color: rgba(180,0,0,.75);
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
 }
 
 /* marketing content */
 
 .marketing .block {
-  background-color: rgba(245,255,255,.9);
+  background-color: rgba(255,255,255,.75);
   padding: 15px;
   position: relative;
-  top: 100px;
+  top: 80px;
   -webkit-box-shadow: 0 0 20px black;
   box-shadow: 0 0 20px black;
-  margin-bottom: 50px;
 }
 
 .marketing .row .block {
   padding-left: 0;
   padding-right: 0;
-}
-
-.marketing .col-lg-4 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.marketing h2 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-weight: normal;
-}
-
-.marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.marketing .block h1 {
-  font-size: 4em;
-  text-align: center;
 }
