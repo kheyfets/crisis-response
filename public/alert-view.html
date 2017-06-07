@@ -26,7 +26,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body id="top">
+  <body id="top" class="crew">
     <img class="bg" src="img/bg4.jpg">
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -50,15 +50,22 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="selectIssueType">Select Priority Level *</label>
-                  <select class="form-control" id="selectIssueType" required data-error="Priority level is required.">
-                    <option value="" disabled selected>Choose a level</option>
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
-                  </select>
+                  <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-danger">
+                  <input type="radio" name="options" id="option1"> High
+                  </label>
+                  <label class="btn btn-info">
+                  <input type="radio" name="options" id="option2"> Medium
+                  </label>
+                  <label class="btn btn-success">
+                  <input type="radio" name="options" id="option3"> Low
+                  </label>
+                  </div>
                 </div>
               </div>
             </div>
+
+               
             
             <div class="row">
               <div class="col-md-12">

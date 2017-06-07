@@ -16,7 +16,7 @@ body {
   margin: 5%;
 }
 
-.bg {
+.hq .bg {
   position: fixed; 
   top: 0; 
   left: 0; 
@@ -26,8 +26,22 @@ body {
   min-height: 100%;
 
   opacity: .6;
+  
+  filter: hue-rotate(180deg) saturate(400%)
+}
 
-  filter: saturate(800%);
+.crew .bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+
+  opacity: .6;
+  
+  filter: hue-rotate(355deg) saturate(600%)
 }
 
 .access-header {
@@ -61,6 +75,10 @@ body {
 .navbar a {
   color: white;
   text-align: center;
+}
+
+.hq .navbar {
+  background-color: rgba(0,0,180,.75);
 }
 
 /* marketing content */
