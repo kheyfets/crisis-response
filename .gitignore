@@ -1,4 +1,4 @@
-# Logs
+# Log`
 logs
 *.log
 npm-debug.log*
@@ -56,3 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# database
+*.sqlite
