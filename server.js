@@ -32,15 +32,30 @@ app.get('/', function(req, res) {
 // GET /dashboard
 // Show dashboard
 app.get('/dashboard', function(req, res) {
-  res.render('dashboard');
+  // Take data and store in database
+  Alert.find({}, function(err, results) {
+    res.render('dashboard', {
+      alerts: results
+    });
+  });
 });
 
 // POST /api/alert/new
 // Send alert to headquarters
 app.post('/api/alert/new', function(req, res) {
-  // Take data and store in database
-  res.render('alert', {
-    message: 'Alert succesfully posted'
+  var alert = new Alert({
+    priority: req.body.priority,
+    issueType: req.body.issueType,
+    flightNumber: req.body.flightNumber,
+    seatNumber: req.body.seatNumber,
+    comments: req.body.comments,
+    crewId: req.body.crewId,
+  });
+
+  alert.save(function(err, alert) {
+    res.render('alert', {
+      message: 'Alert succesfully posted'
+    });
   });
 });
 
