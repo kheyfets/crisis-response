@@ -5,10 +5,13 @@
 
     <link rel="icon" href="favicon.ico">
 
+
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css">
 
     <title>HQ Dashboard</title>
 
@@ -27,20 +30,13 @@
   </head>
 
   <body id="top" class="hq">
-    <img class="bg" src="img/bg4.jpg">
+    
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <ul class="nav navbar-nav">
-          <li><a href="#">HQ Crisis Dashboard</a></li>
-        </ul>
-      </div>
-    </nav>
+    <h2 class="logo-head"><img class="logo" src="img/logo.png">Internal Crisis Dashboard</h2>
 
-    <div class="container marketing">
-      <div class="row jumbotron about-us block" style="border-radius: 0">
+   
 
-        <table class="dash">
+        <!--<table class="dash">
           <tr>
             <th>Priority</th>
             <th>Issue Type</th>
@@ -61,10 +57,118 @@
             <td><span class="glyphicon glyphicon-th"</td>
           </tr>
           <% } %>
+        </table>-->
+
+        <table class="dash">
+          <tr>
+            <th>Priority</th>
+            <th>Issue Type</th>
+            <th>Flight #</th>
+            <th style="width: 30%">Comments</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+          
+          <tr>
+            <td>
+            
+              <span class="label label-danger">High</span>
+            
+
+            
+
+            
+            </td>
+
+            <td>Medical Emergency</td>
+            <td>9321</td>
+            <td>Passenger with peanut allergy given peanuts.</td>
+            <td>Unresolved</td>
+            <td>
+            
+            6/8
+
+            13:47
+            </td>
+            <td><span class="glyphicon glyphicon-th"></span></td>
+          </tr>
+          
+          <tr>
+            <td>
+            
+
+            
+              <span class="label label-info">Medium</span>
+            
+
+            
+            </td>
+
+            <td>Intoxicated Passenger</td>
+            <td>5324</td>
+            <td>Intoxicated passenger fell and hit head on aisle seat.</td>
+            <td>Unresolved</td>
+            <td>
+            
+            6/8
+
+            13:47
+            </td>
+            <td><span class="glyphicon glyphicon-th"></span></td>
+          </tr>
+          
+          <tr>
+            <td>
+            
+
+            
+              <span class="label label-info">Medium</span>
+            
+
+            
+            </td>
+
+            <td>Passenger Argument</td>
+            <td>1764</td>
+            <td>Two passengers were in a fight mid flight.</td>
+            <td>Unresolved</td>
+            <td>
+            
+            6/8
+
+            13:46
+            </td>
+            <td><span class="glyphicon glyphicon-th"></span></td>
+          </tr>
+          
+          <tr>
+            <td>
+            
+
+            
+
+            
+              <span class="label label-success">Low</span>
+            
+            </td>
+
+            <td>Food Problem</td>
+            <td>6334</td>
+            <td>Passenger complained extensively about in-flight meal.</td>
+            <td>Unresolved</td>
+            <td>
+            
+            6/8
+
+            13:48
+            </td>
+            <td><span class="glyphicon glyphicon-th"></span></td>
+          </tr>
+          
         </table>
 
-      </div>
-    </div>
+
 
     <!-- js at the end of file for faster load -->
     <script src="js/jquery.min.js"></script>
