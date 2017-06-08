@@ -10,6 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+
     <title>HQ Dashboard</title>
 
     <!-- Bootstrap core CSS -->
@@ -27,64 +29,52 @@
   </head>
 
   <body id="top" class="hq">
-    <img class="bg" src="img/bg4.jpg">
+    
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <ul class="nav navbar-nav">
-          <li><a href="#">HQ Crisis Dashboard</a></li>
-        </ul>
-      </div>
-    </nav>
+    <h2 class="logo-head" style="text-align: center"><img class="logo" src="img/logo.png">Internal Crisis Dashboard</h2>
 
-    <div class="container marketing">
-      <div class="row jumbotron about-us block" style="border-radius: 0">
+    <table class="dash" style="width: 95%; margin: 0 auto">
+      <tr>
+        <th>Priority</th>
+        <th>Issue Type</th>
+        <th>Flight #</th>
+        <th style="width: 30%">Comments</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+      <% for (var i = 0; i < data.length; i++) { %>
+      <tr>
+        <td>
+        <% if (data[i].priority == 3) { %>
+          <span class="label label-danger">High</span>
+        <% } %>
 
-        <table class="dash">
-          <tr>
-            <th>Priority</th>
-            <th>Issue Type</th>
-            <th>Flight #</th>
-            <th style="width: 30%">Comments</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th>Action</th>
-          </tr>
-          <% for (var i = 0; i < data.length; i++) { %>
-          <tr>
-            <td>
-            <% if (data[i].priority == 3) { %>
-              <span class="label label-danger">High</span>
-            <% } %>
+        <% if (data[i].priority == 2) { %>
+          <span class="label label-info">Medium</span>
+        <% } %>
 
-            <% if (data[i].priority == 2) { %>
-              <span class="label label-info">Medium</span>
-            <% } %>
+        <% if (data[i].priority == 1) { %>
+          <span class="label label-success">Low</span>
+        <% } %>
+        </td>
 
-            <% if (data[i].priority == 1) { %>
-              <span class="label label-success">Low</span>
-            <% } %>
-            </td>
+        <td><%= data[i].issueType %></td>
+        <td><%= data[i].flightNumber %></td>
+        <td><%= data[i].comments %></td>
+        <td><%= data[i].status %></td>
+        <td>
+        <%
+          var date = new Date(data[i].created) 
+        %>
+        <%=date.getMonth()+1%>/<%=date.getDate()%>
 
-            <td><%= data[i].issueType %></td>
-            <td><%= data[i].flightNumber %></td>
-            <td><%= data[i].comments %></td>
-            <td><%= data[i].status %></td>
-            <td>
-            <%
-              var date = new Date(data[i].created) 
-            %>
-            <%=date.getMonth()+1%>/<%=date.getDate()%>
-
-            <%= date.toTimeString().substring(0, 5) %>
-            </td>
-            <td><span class="glyphicon glyphicon-th"></span></td>
-          </tr>
-          <% } %>
-        </table>
-
-      </div>
-    </div>
+        <%= date.toTimeString().substring(0, 5) %>
+        </td>
+        <td><span class="glyphicon glyphicon-th"></span></td>
+      </tr>
+      <% } %>
+    </table>
 
     <!-- js at the end of file for faster load -->
     <script src="js/jquery.min.js"></script>
