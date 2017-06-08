@@ -39,60 +39,30 @@
 
     <div class="container marketing">
       <div class="row jumbotron about-us block" style="border-radius: 0">
-        
-        <!--
-        <table>
-          <% for (var i = 0; i < data.length; i++) { %>
-              <tr>
-                  <td>
-                      <%= data[i][priority] %>
-                  </td>
-                  <td>
-                      <%= data[i][issueType] %>
-                  </td>
-                  <td>
-                      <%= data[i][flightNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][seatNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][passengerName] %>
-                  </td>
-                  <td>
-                      <%= data[i][comments] %>
-                  </td>
-                  <td>
-                      <%= data[i][crewID] %>
-                  </td>
-              </tr>
-          <% } %>
-        </table>
-        -->
 
         <table>
           <% for (var i = 0; i < data.length; i++) { %>
               <tr>
                   <td>
-                      <%= data[i][priority] %>
+                      <%= data[i].priority %>
                   </td>
                   <td>
-                      <%= data[i][issueType] %>
+                      <%= data[i].issueType %>
                   </td>
                   <td>
-                      <%= data[i][flightNumber] %>
+                      <%= data[i].flightNumber %>
                   </td>
                   <td>
-                      <%= data[i][seatNumber] %>
+                      <%= data[i].seatNumber %>
                   </td>
                   <td>
-                      <%= data[i][passengerName] %>
+                      <%= data[i].passengerName %>
                   </td>
                   <td>
-                      <%= data[i][comments] %>
+                      <%= data[i].comments %>
                   </td>
                   <td>
-                      <%= data[i][crewID] %>
+                      <%= data[i].crewId %>
                   </td>
               </tr>
           <% } %>

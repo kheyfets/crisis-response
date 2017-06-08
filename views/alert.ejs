@@ -40,7 +40,11 @@
     <div class="container marketing">
       <div class="row jumbotron about-us block" style="border-radius: 0">
 
-        <form id="contact-form" method="post" action="contact.js" role="form">
+        <form id="contact-form" method="post" action="/alert/new" role="form">
+
+          <% if (flash.success) { %>
+          <div class="alert alert-success"><%= flash.success %></div>
+          <% } %>
 
           <div class="messages"></div>
 
@@ -50,7 +54,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="selectIssueType">Select Priority Level *</label>
-                  <select class="form-control" id="selectIssueType" required data-error="Priority level is required.">
+                  <select class="form-control" id="selectIssueType" required data-error="Priority level is required." name="priority">
                     <option value="" disabled selected>Choose a level</option>
                     <option>High</option>
                     <option>Medium</option>
@@ -64,7 +68,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="selectIssueType">Select Issue Type *</label>
-                  <select class="form-control" id="selectIssueType" required data-error="Issue type is required.">
+                  <select class="form-control" id="selectIssueType" required data-error="Issue type is required." name="issueType">
                     <option value="" disabled selected>Choose an issue</option>
                     <option>Intoxicated Passenger</option>
                     <option>Baggage Problem</option>
@@ -86,31 +90,11 @@
               </div>
             </div>
 
-            <dic class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                      <label for="seatNumber">Seat number</label>
-                      <input id="seatNumber" type="text" name="surname" class="form-control" placeholder="Please enter your lastname">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                      <label for="name">Passenger Name</label>
-                      <input id="name" type="text" name="name" class="form-control" placeholder="Please enter the passenger name">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-            </div>
-
             <div class="row">
               <div class="col-md-12">
                   <div class="form-group">
                       <label for="memberID">Crew Member ID *</label>
-                      <input id="memberID" type="number" name="id" class="form-control" placeholder="Please enter your phone" required="required" data-error="Crew Member ID is required.">
+                      <input id="memberID" type="number" name="crewId" class="form-control" placeholder="Please enter your phone" required="required" data-error="Crew Member ID is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -120,7 +104,7 @@
               <div class="col-md-12">
                   <div class="form-group">
                       <label for="form_message">Comments</label>
-                      <textarea id="form_message" name="message" class="form-control" placeholder="Comments on incident" rows="4"></textarea>
+                      <textarea id="form_message" name="comments" class="form-control" placeholder="Comments on incident" rows="4"></textarea>
                       <div class="help-block with-errors"></div>
                   </div>
               </div>

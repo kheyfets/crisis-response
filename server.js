@@ -2,19 +2,27 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('req-flash');
 
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // Database connection
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URL);
+mongoose.Promise = require('bluebird');
+mongoose.connect(process.env.MONGO_URL || 'localhost/ia');
 
 // Models
 const Alert = require('./models/alert');
 
-// how prioritize, feature impact, technical considerations, legal, user adoption
-
 // Set up middleware
+app.use(cookieParser());
+app.use(session({ secret: 'kittycat' }));
+app.use(session({ cookie: { maxAge: 60000 }}));
+app.use(flash({locals: 'flash'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,33 +41,34 @@ app.get('/', function(req, res) {
 // Show dashboard
 app.get('/dashboard', function(req, res) {
   // Take data and store in database
-  Alert.find({}, function(err, results) {
+  Alert.find({}).sort({priority: -1, created: -1}).exec(function(err, results) {
     res.render('dashboard', {
-      alerts: results
+      data: results
     });
   });
 });
 
 // POST /api/alert/new
 // Send alert to headquarters
-app.post('/api/alert/new', function(req, res) {
+app.post('/alert/new', function(req, res) {
   var alert = new Alert({
     priority: req.body.priority,
     issueType: req.body.issueType,
     flightNumber: req.body.flightNumber,
-    seatNumber: req.body.seatNumber,
-    passengerName: req.body.passengerName,
     crewId: req.body.crewId,
     comments: req.body.comments,
   });
 
   alert.save(function(err, alert) {
-    res.render('alert', {
-      message: 'Alert succesfully posted'
-    });
+    // Emit info to sockets
+    io.sockets.emit('alert:new', alert);
+
+    req.flash('success', 'Alert succesfully posted');
+    res.redirect('/');
   });
 });
 
-app.listen(3001, function() {
+// Sockets
+server.listen(3001, function() {
   console.log('Crisis Response Demo running in port 3001');
 });
