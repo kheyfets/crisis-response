@@ -40,22 +40,49 @@
     <div class="container marketing">
       <div class="row jumbotron about-us block" style="border-radius: 0">
 
-        <table>
+        <table class="dash">
+          <tr>
+            <th>Priority</th>
+            <th>Issue Type</th>
+            <th>Flight #</th>
+            <th style="width: 30%">Comments</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
           <% for (var i = 0; i < data.length; i++) { %>
-              <tr>
-                  <td>
-                      <%= data[i].priority %>
-                  </td>
-                  <td>
-                      <%= data[i].issueType %>
-                  </td>
-                  <td>
-                      <%= data[i].flightNumber %>
-                  </td>
-                  <td>
-                      <%= data[i].comments %>
-                  </td>
-              </tr>
+          <tr>
+            <td>
+            <% if (data[i].priority == 3) { %>
+              <span class="label label-danger">High</span>
+            <% } %>
+
+            <% if (data[i].priority == 2) { %>
+              <span class="label label-info">Medium</span>
+            <% } %>
+
+            <% if (data[i].priority == 1) { %>
+              <span class="label label-success">Low</span>
+            <% } %>
+            </td>
+
+            <td><%= data[i].issueType %></td>
+            <td><%= data[i].flightNumber %></td>
+            <td><%= data[i].comments %></td>
+            <td><%= data[i].status %></td>
+            <td>
+            <%
+              var date = new Date(data[i].created) 
+            %>
+            <%= date.getMonth()+1 %>
+            /
+            <%= date.getDay() %>
+
+            <%= date.getHours() %>:
+            <%= date.getMinutes() %>
+            </td>
+            <td><span class="glyphicon glyphicon-th"></span></td>
+          </tr>
           <% } %>
         </table>
 
@@ -66,6 +93,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/docs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
+
+    <script src="js/live-dash.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
