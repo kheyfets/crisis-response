@@ -16,7 +16,7 @@ mongoose.Promise = require('bluebird');
 mongoose.connect(process.env.MONGO_URL || 'localhost/ia');
 
 // Models
-const Alert = require('./models/alert');
+const Alert = require('./models/Alert');
 
 // Set up middleware
 app.use(cookieParser());
