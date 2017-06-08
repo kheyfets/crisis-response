@@ -67,6 +67,6 @@ app.post('/alert/new', function(req, res) {
 });
 
 // Sockets
-server.listen(3001, function() {
+server.listen(process.env.PORT || 3001, function() {
   console.log('Crisis Response Demo running in port 3001');
 });
