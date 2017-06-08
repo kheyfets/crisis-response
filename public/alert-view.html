@@ -39,6 +39,7 @@
 
     <div class="container marketing">
       <div class="row jumbotron about-us block" style="border-radius: 0">
+      
 
         <form id="contact-form" method="post" action="contact.js" role="form">
 
@@ -50,16 +51,21 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="selectIssueType">Select Priority Level *</label>
-                  <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-danger">
-                  <input type="radio" name="options" id="option1"> High
-                  </label>
-                  <label class="btn btn-info">
-                  <input type="radio" name="options" id="option2"> Medium
-                  </label>
-                  <label class="btn btn-success">
-                  <input type="radio" name="options" id="option3"> Low
-                  </label>
+
+                  <div class="pull-center">
+                    <div class="btn-group pri-gp" data-toggle="buttons">
+                      <label for="high" class="btn btn-danger">
+                      <input type="radio" name="priority" id="high" value="3">High
+                      </label>
+
+                      <label for="medium" class="btn btn-info active">
+                      <input type="radio" name="priority" id="medium" checked="checked" value="2">Medium
+                      </label>
+
+                      <label for="low" class="btn btn-success">
+                      <input type="radio" name="priority" id="low" value="1">Low
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -71,6 +77,42 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="selectIssueType">Select Issue Type *</label>
+
+                  <div class="pull-center">
+                    <div class="btn-group icon-gp" data-toggle="buttons">
+                      <label for="baggage" class="btn btn-secondary active">
+                      <input type="radio" name="issue" value="Baggage Problem" id="baggage" checked="checked">
+                      <span><img class="icon" src="img/baggage.png" alt="Baggage Problem"></span>
+                      </label>
+
+                      <label for="intoxicated" class="btn btn-secondary">
+                      <input type="radio" name="issue" value="Intoxicated Passenger" id="intoxicated">
+                      <span><img class="icon" src="img/drunk.png" alt="Intoxicated Passenger"></span>
+                      </label>
+
+                      <label for="food" class="btn btn-secondary">
+                      <input type="radio" name="issue" id="food" value="Food Problem">
+                      <span><img class="icon" src="img/food.png" alt="Food Problem"></span>
+                      </label>
+
+                      <label for="seats" class="btn btn-secondary">
+                      <input type="radio" name="issue" id="seats" value="Seat Problem">
+                      <span><img class="icon" src="img/seat.png" alt="Seat Problem"></span>
+                      </label>
+
+                      <label for="medical" class="btn btn-secondary">
+                      <input type="radio" name="issue" id="medical" value="Medical Emergency">
+                      <span><img class="icon" src="img/medical.png" alt="Medical Emergency"></span>
+                      </label>
+
+                      <label for="argument" class="btn btn-secondary">
+                      <input type="radio" name="issue" id="argument" value="Passenger Argument">
+                      <span><img class="icon" src="img/argument.png" alt="Passenger Argument"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <!--
+                  <label for="selectIssueType">Select Issue Type *</label>
                   <select class="form-control" id="selectIssueType" required data-error="Issue type is required.">
                     <option value="" disabled selected>Choose an issue</option>
                     <option>Intoxicated Passenger</option>
@@ -79,6 +121,7 @@
                     <option>Passenger Argument</option>
                     <option>Seats or Overbooking</option>
                   </select>
+                  -->
                 </div>
               </div>
             </div>
@@ -88,36 +131,6 @@
                   <div class="form-group">
                       <label for="flightNumber">Flight Number *</label>
                       <input id="flightNumber" type="number" name="flightNumber" class="form-control" placeholder="Please enter the flight number *" required="required" data-error="Flight number is required.">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-            </div>
-
-            <dic class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                      <label for="seatNumber">Seat number</label>
-                      <input id="seatNumber" type="text" name="surname" class="form-control" placeholder="Please enter your lastname">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                      <label for="name">Passenger Name</label>
-                      <input id="name" type="text" name="name" class="form-control" placeholder="Please enter the passenger name">
-                      <div class="help-block with-errors"></div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                      <label for="memberID">Crew Member ID *</label>
-                      <input id="memberID" type="number" name="id" class="form-control" placeholder="Please enter your phone" required="required" data-error="Crew Member ID is required.">
                       <div class="help-block with-errors"></div>
                   </div>
               </div>
@@ -134,21 +147,12 @@
             </div>
 
             <div class="row">
-              <div class="col-md-12">
-                  <div class="form-group">
-                  <label for="example-datetime-local-input" class="col-2 col-form-label">Date</label>
-                    <div class="col-10">
-                      <input class="form-control" type="date" value="2017-06-08" id="date">
-                    </div>
-                  </div>
+              <div class="col-md-12 pull-center">
+                  <input type="submit" class="submit btn btn-success btn-send" value="Send message">
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-md-12 pull-center">
-                  <input type="submit" class="btn btn-success btn-send" value="Send message">
-              </div>
-            </div>
+            
 
           </div>
 
