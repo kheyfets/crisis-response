@@ -42,5 +42,7 @@ socket.on('alert:new', function (data) {
 	var action = document.createElement('td');
 	action.innerHTML = "<span class=\"glyphicon glyphicon-th\"></span>";
 
+	row.appendChild(action);
+	
 	table.appendChild(row);
 });
