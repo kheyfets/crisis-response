@@ -39,62 +39,27 @@
 
     <div class="container marketing">
       <div class="row jumbotron about-us block" style="border-radius: 0">
-        
-        <!--
-        <table>
-          <% for (var i = 0; i < data.length; i++) { %>
-              <tr>
-                  <td>
-                      <%= data[i][priority] %>
-                  </td>
-                  <td>
-                      <%= data[i][issueType] %>
-                  </td>
-                  <td>
-                      <%= data[i][flightNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][seatNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][passengerName] %>
-                  </td>
-                  <td>
-                      <%= data[i][comments] %>
-                  </td>
-                  <td>
-                      <%= data[i][crewID] %>
-                  </td>
-              </tr>
-          <% } %>
-        </table>
-        -->
 
-        <table>
+        <table class="dash">
+          <tr>
+            <th>Priority</th>
+            <th>Issue Type</th>
+            <th>Flight #</th>
+            <th>Comments</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
           <% for (var i = 0; i < data.length; i++) { %>
-              <tr>
-                  <td>
-                      <%= data[i][priority] %>
-                  </td>
-                  <td>
-                      <%= data[i][issueType] %>
-                  </td>
-                  <td>
-                      <%= data[i][flightNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][seatNumber] %>
-                  </td>
-                  <td>
-                      <%= data[i][passengerName] %>
-                  </td>
-                  <td>
-                      <%= data[i][comments] %>
-                  </td>
-                  <td>
-                      <%= data[i][crewID] %>
-                  </td>
-              </tr>
+          <tr>
+            <td><span class="label label-info"><%= data[i][priority] %></span></td>
+            <td><%= data[i][issueType] %></td>
+            <td><%= data[i][flightNumber] %></td>
+            <td><%= data[i][comments] %></td>
+            <td><%= data[i][status] %></td>
+            <td><%= data[i][date] %></td>
+            <td><%= data[i][action] %></td>
+          </tr>
           <% } %>
         </table>
 
