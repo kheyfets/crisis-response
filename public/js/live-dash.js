@@ -30,7 +30,7 @@ socket.on('alert:new', function (data) {
 	var dateCol = document.createElement('td');
 	var date = new Date(data.created);
 	console.log(data.created);
-	dateCol.innerHTML = (date.getMonth()+1) + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes();
+	dateCol.innerHTML = (date.getMonth()+1) + '/' + date.getDate() + ' ' + date.toTimeString().substring(0, 5);
 
 	row.appendChild(priority);
 	row.appendChild(issueType);

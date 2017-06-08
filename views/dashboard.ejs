@@ -74,12 +74,9 @@
             <%
               var date = new Date(data[i].created) 
             %>
-            <%= date.getMonth()+1 %>
-            /
-            <%= date.getDay() %>
+            <%=date.getMonth()+1%>/<%=date.getDate()%>
 
-            <%= date.getHours() %>:
-            <%= date.getMinutes() %>
+            <%= date.toTimeString().substring(0, 5) %>
             </td>
             <td><span class="glyphicon glyphicon-th"></span></td>
           </tr>
