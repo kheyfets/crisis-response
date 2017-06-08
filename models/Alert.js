@@ -4,7 +4,6 @@ const AlertSchema = new mongoose.Schema({
   priority: Number,
   issueType: String,
   flightNumber: String,
-  crewId: Number,
   comments: String,
   status: {
     type: String,

@@ -21,7 +21,6 @@ const Alert = require('./models/alert');
 // Set up middleware
 app.use(cookieParser());
 app.use(session({ secret: 'kittycat' }));
-app.use(session({ cookie: { maxAge: 60000 }}));
 app.use(flash({locals: 'flash'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -55,7 +54,6 @@ app.post('/alert/new', function(req, res) {
     priority: req.body.priority,
     issueType: req.body.issueType,
     flightNumber: req.body.flightNumber,
-    crewId: req.body.crewId,
     comments: req.body.comments,
   });
 
