@@ -5,7 +5,9 @@ body {
   color: #5a5a5a;
   background-color: rgba(0,0,0,.9);
   margin: 0;
-  font-family: sans-serif;
+  
+  background-color: #454753;
+  color: white;
 }
 
 .pull-center {
@@ -28,6 +30,15 @@ body {
   opacity: .6;
   
   filter: hue-rotate(180deg) saturate(400%)
+}
+
+.hq {
+  background-color: #454753;
+  color: white;
+}
+
+.hq h2 {
+  font-size: 36px;
 }
 
 .crew .bg {
@@ -141,11 +152,37 @@ body {
   margin-bottom: 10px;
 }
 
+.logo-head {
+
+}
+
+.logo {
+  width: 51px;
+  padding: 5px;
+}
+
+.dash {
+  font-size: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .dash tr {
+
 }
 
 .dash td, .dash th {
   text-align: center;
-  padding: 10px;
+  border-top: solid #454753 15px;
+  border-bottom: solid #454753 15px;
   font-size: 0.8em;
+  background-color: #393A44;
+}
+
+.dash th {
+  padding: 15px 5px;
+}
+
+*, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
 }
