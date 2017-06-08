@@ -39,5 +39,8 @@ socket.on('alert:new', function (data) {
 	row.appendChild(status);
 	row.appendChild(dateCol)
 
+	var action = document.createElement('td');
+	action.innerHTML = "<span class=\"glyphicon glyphicon-th\"></span>";
+
 	table.appendChild(row);
 });
